@@ -18,5 +18,17 @@
         android:textSize="35sp"
         android:textColor="@color/white"
         android:text="Sign up"/>
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/username"
+        android:textColor="@color/white"
+        android:layout_below="@+id/signup"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        android:inputType="text"
+        android:textColorHint="@color/white"
+        android:hint="username"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
