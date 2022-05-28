@@ -44,33 +44,34 @@ public class MainActivity extends AppCompatActivity {
                 validatePreference();
                 validatePassword();
 
-                String username = meditText.getText().toString();
-                String location = mLocationEditText.getText().toString();
-                String age = mageEditText.getText().toString();
-                String preference = mpreferenceEditText.getText().toString();
-                String email = memailEditText.getText().toString();
-                String password = mpasswordEditText.getText().toString();
+                if(validateEmail()&&validatePreference()&&validatAge()&&validateUsername()&&validateLocation() && validatePassword()== true) {
 
-                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-                intent.putExtra("username", username);
-                intent.putExtra("location", location);
-                intent.putExtra("age", age);
-                intent.putExtra("preference", preference);
-                intent.putExtra("email", email);
-                intent.putExtra("password", password);
+                    String username = meditText.getText().toString();
+                    String location = mLocationEditText.getText().toString();
+                    String age = mageEditText.getText().toString();
+                    String preference = mpreferenceEditText.getText().toString();
+                    String email = memailEditText.getText().toString();
+                    String password = mpasswordEditText.getText().toString();
 
-                startActivity(intent);
+                    Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                    intent.putExtra("username", username);
+                    intent.putExtra("location", location);
+                    intent.putExtra("age", age);
+                    intent.putExtra("preference", preference);
+                    intent.putExtra("email", email);
+                    intent.putExtra("password", password);
+
+                    startActivity(intent);
+                }
             }
 
 
         });
 
 
+        }
 
 
-
-
-    }
     private boolean validateEmail() {
         String email = memailEditText.getText().toString();
         if (email.isEmpty()) {
