@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -64,4 +65,69 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    private boolean validateEmail() {
+        String email = memailEditText.getText().toString();
+        if (email.isEmpty()) {
+            memailEditText.setError("field cannot be empty");
+            return false;
+        } else if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            memailEditText.setError("please enter a valid email");
+            return false;
+        } else {
+            memailEditText.setError(null);
+            return true;
+        }
+    }
+    private boolean validateUsername() {
+        String username = meditText.getText().toString();
+        if (username.isEmpty()) {
+            meditText.setError("field cannot be empty");
+            return false;
+        }  else {
+            memailEditText.setError(null);
+            return true;
+        }
+    }
+    private boolean validatAge() {
+        String age = mageEditText.getText().toString();
+        if (age.isEmpty()) {
+            mageEditText.setError("field cannot be empty");
+            return false;
+        }  else {
+            memailEditText.setError(null);
+            return true;
+        }
+    }
+    private boolean validateLocation() {
+        String location = mLocationEditText.getText().toString();
+        if (location.isEmpty()) {
+            mLocationEditText.setError("field cannot be empty");
+            return false;
+        }  else {
+            memailEditText.setError(null);
+            return true;
+        }
+    }
+    private boolean validatePreference() {
+        String preference = mpreferenceEditText.getText().toString();
+        if (preference.isEmpty()) {
+            mpreferenceEditText.setError("field cannot be empty");
+            return false;
+        } else {
+            mpreferenceEditText.setError(null);
+            return true;
+        }
+    }
+    private boolean validatePassword() {
+        String password = mpasswordEditText.getText().toString();
+        if (password.isEmpty()) {
+            mpasswordEditText.setError("field cannot be empty");
+            return false;
+        } else {
+            mpasswordEditText.setError(null);
+            return true;
+        }
+    }
 }
+
+
