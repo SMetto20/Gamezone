@@ -37,6 +37,12 @@ public class MainActivity extends AppCompatActivity {
         mfindSignupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                validateEmail();
+                validateLocation();
+                validatAge();
+                validateUsername();
+                validatePreference();
+                validatePassword();
 
                 String username = meditText.getText().toString();
                 String location = mLocationEditText.getText().toString();
