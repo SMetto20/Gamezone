@@ -30,5 +30,17 @@
         android:textColorHint="@color/white"
         android:hint="username"
         android:layout_centerHorizontal="true" />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/agefield"
+        android:textColor="@color/white"
+        android:layout_below="@+id/username"
+        android:layout_marginBottom="10dp"
+        android:inputType="number"
+        android:padding="10dp"
+        android:textColorHint="@color/white"
+        android:hint="age"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
