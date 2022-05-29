@@ -8,6 +8,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 validateUsername();
                 validatePreference();
                 validatePassword();
+                Toast.makeText(MainActivity.this, "Fill in required fields", Toast.LENGTH_LONG).show();
 
                 if(validateEmail()&&validatePreference()&&validatAge()&&validateUsername()&&validateLocation() && validatePassword()== true) {
 
