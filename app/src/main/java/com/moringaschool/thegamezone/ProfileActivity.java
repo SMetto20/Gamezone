@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -15,7 +17,8 @@ public class ProfileActivity extends AppCompatActivity {
     @BindView(R.id.realageTextView)TextView mrealageTextView;
     @BindView(R.id.reallocTextView) TextView mreallocTextView;
     @BindView(R.id.realprefTextView) TextView mrealprefTextView;
-
+    @BindView(R.id.viewbutton)
+    Button mviewButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,5 +34,10 @@ public class ProfileActivity extends AppCompatActivity {
         mreallocTextView.setText(loc);
         String pref = intent.getStringExtra("preference");
         mrealprefTextView.setText(pref);
+        mviewButton.setOnClickListener(new View.OnClickListener() { public void onClick(View v) {
+            Intent intent = new Intent(ProfileActivity.this, GamesActivity.class);
+            startActivity(intent);
+        }
+        });
     }
 }
