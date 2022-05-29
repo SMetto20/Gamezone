@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/profileimage"
+        android:src="@drawable/profileicon"
         />
 
     <TextView
@@ -15,7 +17,7 @@
         android:layout_below="@+id/profileimage"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="30sp"
         android:text="Profile"
         android:paddingBottom="15dp"
@@ -27,10 +29,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/profile"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:gravity="left"
         android:layout_marginLeft="150dp"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:paddingBottom="15dp"
 
         android:text="name"
@@ -43,8 +45,8 @@
         android:layout_below="@+id/profile"
         android:gravity="right"
         android:layout_marginLeft="210dp"
-        android:textSize="20sp"
-        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textColor="@color/black"
         />
 
     <TextView
@@ -52,10 +54,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/name"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_marginLeft="150dp"
         android:paddingBottom="15dp"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:text="age"
         />
     <TextView
@@ -66,18 +68,18 @@
         android:layout_below="@+id/name"
         android:gravity="right"
         android:layout_marginLeft="210dp"
-        android:textSize="20sp"
-        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textColor="@color/black"
         />
     <TextView
         android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_below="@+id/age"
         android:layout_marginLeft="150dp"
         android:paddingBottom="15dp"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:text="location"
         />
     <TextView
@@ -88,18 +90,18 @@
         android:layout_below="@+id/age"
         android:gravity="right"
         android:layout_marginLeft="230dp"
-        android:textSize="20sp"
-        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textColor="@color/black"
         />
     <TextView
         android:id="@+id/preference"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_below="@+id/location"
         android:layout_marginLeft="140dp"
         android:paddingBottom="15dp"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:text=" preference"
         />
     <TextView
@@ -110,9 +112,18 @@
         android:layout_below="@+id/location"
         android:gravity="right"
         android:layout_marginLeft="250dp"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textColor="@color/white"
         />
+    <Button
+        android:id="@+id/signupbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/realprefTextView"
+        android:layout_centerHorizontal="true"
+        android:background="@color/black"
+        android:layout_marginTop="20dp"
+        android:text="view games" />
 
 
 </RelativeLayout>
