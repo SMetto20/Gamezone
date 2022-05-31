@@ -7,7 +7,7 @@
     <ImageView
         android:id="@+id/profileimage"
         android:layout_width="186dp"
-        android:layout_height="195dp"
+        android:layout_height="160dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/userpicture" />
 
