@@ -45,8 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 validatePreference();
                 validatePassword();
                 Toast.makeText(MainActivity.this, "Fill in required fields", Toast.LENGTH_LONG).show();
-
-                if(validateEmail()&&validatePreference()&&validatAge()&&validateUsername()&&validateLocation() && validatePassword()== true) {
+                if (validateEmail()&&validatePreference()&&validatAge()&&validateUsername()&&validateLocation() && validatePassword()== true) {
 
                     String username = meditText.getText().toString();
                     String location = mLocationEditText.getText().toString();

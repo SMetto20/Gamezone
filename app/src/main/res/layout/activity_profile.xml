@@ -3,12 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
+
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/profileimage"
-        android:src="@drawable/profileicon"
-        />
+        android:layout_width="186dp"
+        android:layout_height="195dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/userpicture" />
 
     <TextView
         android:id="@+id/profile"
@@ -16,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/profileimage"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="0dp"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:text="Profile"
@@ -55,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/name"
         android:textColor="@color/black"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="170dp"
         android:paddingBottom="15dp"
         android:textSize="18sp"
         android:text="age"
@@ -89,7 +90,7 @@
         android:id="@+id/reallocTextView"
         android:layout_below="@+id/age"
         android:gravity="right"
-        android:layout_marginLeft="230dp"
+        android:layout_marginLeft="220dp"
         android:textSize="18sp"
         android:textColor="@color/black"
         />
@@ -111,9 +112,9 @@
         android:id="@+id/realprefTextView"
         android:layout_below="@+id/location"
         android:gravity="right"
-        android:layout_marginLeft="250dp"
+        android:layout_marginLeft="240dp"
         android:textSize="18sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         />
     <Button
         android:id="@+id/viewbutton"
