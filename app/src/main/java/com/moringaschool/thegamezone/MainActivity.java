@@ -78,10 +78,7 @@ public class MainActivity extends AppCompatActivity {
         if (email.isEmpty()) {
             memailEditText.setError("field cannot be empty");
             return false;
-        } else if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            memailEditText.setError("please enter a valid email");
-            return false;
-        } else {
+        }  else {
             memailEditText.setError(null);
             return true;
         }
