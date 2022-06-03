@@ -7,8 +7,8 @@ By Sandra Metto
 4.[About-author](#About-athor)
 ### Description
 This app allows users to view the latest free to play cross platform games pc games console games etc.
-the purpose for creating this app is because often than not gamers want to enjoy some nice games that arent expensive.
-at times this information is scarce and requires alot of research I have made this process simpler by creating an app that 
+The purpose for creating this app, is because often than not gamers want to enjoy some nice games that arent expensive.
+At times this information is scarce and requires alot of research, I have made this process simpler by creating an app that 
 caters to these needs.
 ### Technology
 
@@ -23,8 +23,8 @@ System.out.prntln("hello world")
 
 
 ### Dependancies
-1. project needs gradle build to run
-2. The project also needs android studio to run
+1. project needs gradle to run 
+2. The project also needs android studio to run 
 
 ### About-author
 Linked in-[Sandra Metto](https://www.linkedin.com/in/sandra-metto-68500319a/)
