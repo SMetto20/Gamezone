@@ -5,39 +5,53 @@ package com.moringaschool.thegamezone;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class GamesListResponse {
+
+public class GamesListResponse implements Serializable {
 
     @SerializedName("id")
     @Expose
     private Integer id;
+
     @SerializedName("title")
     @Expose
     private String title;
+
     @SerializedName("thumbnail")
     @Expose
     private String thumbnail;
+
     @SerializedName("short_description")
     @Expose
     private String shortDescription;
+
     @SerializedName("game_url")
     @Expose
     private String gameUrl;
+
     @SerializedName("genre")
     @Expose
     private String genre;
+
     @SerializedName("platform")
     @Expose
     private String platform;
+
     @SerializedName("publisher")
     @Expose
     private String publisher;
+
     @SerializedName("developer")
     @Expose
     private String developer;
+
     @SerializedName("release_date")
     @Expose
     private String releaseDate;
+
     @SerializedName("freetogame_profile_url")
     @Expose
     private String freetogameProfileUrl;
@@ -63,6 +77,7 @@ public class GamesListResponse {
      * @param platform
      * @param freetogameProfileUrl
      */
+    private ArrayList<GamesListResponse> listGames = new ArrayList<>();
     public GamesListResponse(Integer id, String title, String thumbnail, String shortDescription, String gameUrl, String genre, String platform, String publisher, String developer, String releaseDate, String freetogameProfileUrl) {
         super();
         this.id = id;
@@ -76,6 +91,7 @@ public class GamesListResponse {
         this.developer = developer;
         this.releaseDate = releaseDate;
         this.freetogameProfileUrl = freetogameProfileUrl;
+        this.listGames.add(this);
     }
 
     public Integer getId() {
@@ -144,6 +160,10 @@ public class GamesListResponse {
 
     public String getDeveloper() {
         return developer;
+    }
+
+    public List<GamesListResponse> getAll(){
+        return listGames;
     }
 
     public void setDeveloper(String developer) {
