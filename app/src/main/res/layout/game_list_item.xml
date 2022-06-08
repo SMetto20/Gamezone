@@ -14,16 +14,17 @@
 <!--        app:layout_constraintstart_totopof="parent"-->
 <!--       />-->
 
-    <ImageView
+    <TextView
         android:layout_width="130dp"
         android:layout_height="100dp"
-        android:id="@+id/gameImageView"
+        android:id="@+id/gameTextView"
+        android:textColor="@color/white"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff"
+
         android:orientation="vertical"
         android:padding="10dp">
 
@@ -33,14 +34,16 @@
             android:layout_height="wrap_content"
             android:text="Game Name"
             android:textSize="20dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/descriptionTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="game description"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:textColor="@color/white"/>
 
 
         <RelativeLayout
@@ -53,7 +56,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:text="Release date"/>
+                android:text="Release date"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
         </RelativeLayout>
     </LinearLayout>
 

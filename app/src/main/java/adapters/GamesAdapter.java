@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +45,7 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.MyViewholder
     holder.gamename.setText(gamesListResponse.getTitle());
     holder.description.setText(gamesListResponse.getShortDescription());
     holder.date.setText(gamesListResponse.getReleaseDate());
+//    holder.gameTextView.setText(gamesListResponse.getThumbnail());
     }
 
     @Override
@@ -51,13 +53,14 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.MyViewholder
         return gamesList.size();
     }
     public static class MyViewholder extends RecyclerView.ViewHolder{
-        TextView gamename, description, date;
+        TextView gamename, description, date, gameTextView;
 
         public MyViewholder(@NonNull View itemView) {
             super(itemView);
             gamename = itemView.findViewById(R.id.gameNameTextView);
             description = itemView.findViewById(R.id.descriptionTextView);
             date = itemView.findViewById(R.id.dateTextView);
+//            gameTextView = itemView.findViewById(R.id.gameTextView);
 
         }
     }
