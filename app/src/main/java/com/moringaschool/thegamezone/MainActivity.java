@@ -1,6 +1,7 @@
 package com.moringaschool.thegamezone;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,9 +36,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+
         mfindSignupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 validateEmail();
                 validateLocation();
                 validatAge();
@@ -47,28 +51,33 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Fill in required fields", Toast.LENGTH_LONG).show();
                 if (validateEmail()&&validatePreference()&&validatAge()&&validateUsername()&&validateLocation() && validatePassword()== true) {
 
-                    String username = meditText.getText().toString();
-                    String location = mLocationEditText.getText().toString();
-                    String age = mageEditText.getText().toString();
-                    String preference = mpreferenceEditText.getText().toString();
-                    String email = memailEditText.getText().toString();
-                    String password = mpasswordEditText.getText().toString();
+//                    String username = meditText.getText().toString();
+//                    String location = mLocationEditText.getText().toString();
+//                    String age = mageEditText.getText().toString();
+//                    String preference = mpreferenceEditText.getText().toString();
+//                    String email = memailEditText.getText().toString();
+//                    String password = mpasswordEditText.getText().toString();
+//
+//                    Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+//                    intent.putExtra("username", username);
+//                    intent.putExtra("location", location);
+//                    intent.putExtra("age", age);
+//                    intent.putExtra("preference", preference);
+//                    intent.putExtra("email", email);
+//                    intent.putExtra("password", password);
+//
+//                    startActivity(intent);
 
-                    Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-                    intent.putExtra("username", username);
-                    intent.putExtra("location", location);
-                    intent.putExtra("age", age);
-                    intent.putExtra("preference", preference);
-                    intent.putExtra("email", email);
-                    intent.putExtra("password", password);
 
-                    startActivity(intent);
+                    FragmentManager fm = getSupportFragmentManager();
+                    SigninDialogFragment signinDialogFragment = new SigninDialogFragment();
+                    signinDialogFragment.show(fm, "Sample Fragment");
                 }
+
             }
 
 
         });
-
 
         }
 
