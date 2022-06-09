@@ -15,11 +15,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.moringaschool.thegamezone.GamesActivity;
 import com.moringaschool.thegamezone.GamesListResponse;
 import com.moringaschool.thegamezone.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.MyViewholder> {
+
     Context context;
     List<GamesListResponse> gamesList;
 
@@ -28,6 +30,7 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.MyViewholder
         this.gamesList = gamesList;
 
     }
+
 
 
 
@@ -45,7 +48,8 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.MyViewholder
     holder.gamename.setText(gamesListResponse.getTitle());
     holder.description.setText(gamesListResponse.getShortDescription());
     holder.date.setText(gamesListResponse.getReleaseDate());
-//    holder.gameTextView.setText(gamesListResponse.getThumbnail());
+    Picasso.get().load(gamesListResponse.getThumbnail()).into(holder.image);
+
     }
 
     @Override
@@ -54,13 +58,13 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.MyViewholder
     }
     public static class MyViewholder extends RecyclerView.ViewHolder{
         TextView gamename, description, date, gameTextView;
-
+        ImageView image;
         public MyViewholder(@NonNull View itemView) {
             super(itemView);
             gamename = itemView.findViewById(R.id.gameNameTextView);
             description = itemView.findViewById(R.id.descriptionTextView);
             date = itemView.findViewById(R.id.dateTextView);
-//            gameTextView = itemView.findViewById(R.id.gameTextView);
+            image = itemView.findViewById(R.id.gameImageView);
 
         }
     }

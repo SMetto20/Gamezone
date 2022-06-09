@@ -99,5 +99,11 @@
         android:layout_centerHorizontal="true"
         android:background="@color/black"
         android:text="continue" />
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/container">
+
+        </FrameLayout>
 
 </RelativeLayout>

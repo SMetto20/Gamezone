@@ -51,27 +51,34 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Fill in required fields", Toast.LENGTH_LONG).show();
                 if (validateEmail()&&validatePreference()&&validatAge()&&validateUsername()&&validateLocation() && validatePassword()== true) {
 
-//                    String username = meditText.getText().toString();
-//                    String location = mLocationEditText.getText().toString();
-//                    String age = mageEditText.getText().toString();
-//                    String preference = mpreferenceEditText.getText().toString();
-//                    String email = memailEditText.getText().toString();
-//                    String password = mpasswordEditText.getText().toString();
-//
-//                    Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-//                    intent.putExtra("username", username);
-//                    intent.putExtra("location", location);
-//                    intent.putExtra("age", age);
-//                    intent.putExtra("preference", preference);
-//                    intent.putExtra("email", email);
-//                    intent.putExtra("password", password);
-//
-//                    startActivity(intent);
+                    String username = meditText.getText().toString();
+                    String location = mLocationEditText.getText().toString();
+                    String age = mageEditText.getText().toString();
+                    String preference = mpreferenceEditText.getText().toString();
+                    String email = memailEditText.getText().toString();
+                    String password = mpasswordEditText.getText().toString();
+
+                    Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                    intent.putExtra("username", username);
+                    intent.putExtra("location", location);
+                    intent.putExtra("age", age);
+                    intent.putExtra("preference", preference);
+                    intent.putExtra("email", email);
+                    intent.putExtra("password", password);
+
+                    startActivity(intent);
+//                  if(v.getId()==R.id.signupbutton)
+//                   getSupportFragmentManager().beginTransaction().add(R.id.container, new signInFragment()).commit();
+//                   mfindSignupButton.setVisibility(View.GONE);
+//                   meditText.setVisibility(View.GONE);
+//                   mageEditText.setVisibility(View.GONE);
+//                   memailEditText.setVisibility(View.GONE);
+//                   mpreferenceEditText.setVisibility(View.GONE);
+//                   mpasswordEditText.setVisibility(View.GONE);
+//                   mLocationEditText.setVisibility(View.GONE);
 
 
-                    FragmentManager fm = getSupportFragmentManager();
-                    SigninDialogFragment signinDialogFragment = new SigninDialogFragment();
-                    signinDialogFragment.show(fm, "Sample Fragment");
+
                 }
 
             }
