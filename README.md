@@ -22,13 +22,13 @@ System.out.prntln("hello world")
 ```
 
 ### Installation process
-1.Make sure you have access to a working browser.
-2.Git clone if necessary.
-3.Install Android Studio on your computer.
-4.Install Gradle.
-5.Clone the project if necessary.
-6.Run the application on Android Studio.
-7.No dependencies required.
+1. Make sure you have access to a working browser.
+2. Git clone if necessary.
+3. Install Android Studio on your computer.
+4. Install Gradle.
+5. Clone the project if necessary.
+6. Run the application on Android Studio.
+7. No dependencies required.
 
 ### Dependancies
 1. project needs gradle to run 
