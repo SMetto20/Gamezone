@@ -5,7 +5,7 @@ By Sandra Metto
 2. [Technology](#Technology)
 3. [Installation](#installation)
 4. [Dependancies](#Dependncies)
-5.[About-author](#About-athor)
+5. [About-author](#About-athor)
 ### Description
 This app allows users to view the latest free to play cross platform games pc games console games etc.
 The purpose for creating this app, is because often than not gamers want to enjoy some nice games that arent expensive.
@@ -14,8 +14,8 @@ caters to these needs.
 The API used is the free to game API
 ### Technology
 
-1.Java 
-2.Android studio
+1. Java 
+2. Android studio
 
 
 ```Java 
