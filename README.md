@@ -11,6 +11,7 @@ This app allows users to view the latest free to play cross platform games pc ga
 The purpose for creating this app, is because often than not gamers want to enjoy some nice games that arent expensive.
 At times this information is scarce and requires alot of research, I have made this process simpler by creating an app that 
 caters to these needs.
+The API used is the free to game API
 ### Technology
 
 1.Java 
