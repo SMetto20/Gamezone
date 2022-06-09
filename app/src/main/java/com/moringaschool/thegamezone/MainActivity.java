@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -36,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
 //    @BindView(R.id.proceedbutton)
 //    Button  mproceedButton;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference ref = database.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
