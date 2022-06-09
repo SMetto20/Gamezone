@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import butterknife.BindView;
@@ -30,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.password)
     EditText mpasswordEditText;
 
+    @BindView(R.id.signup)
+    TextView msignup;
+
+//    @BindView(R.id.proceedbutton)
+//    Button  mproceedButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,23 +56,24 @@ public class MainActivity extends AppCompatActivity {
                 validatePassword();
                 Toast.makeText(MainActivity.this, "Fill in required fields", Toast.LENGTH_LONG).show();
                 if (validateEmail()&&validatePreference()&&validatAge()&&validateUsername()&&validateLocation() && validatePassword()== true) {
+//
+                        String username = meditText.getText().toString();
+                        String location = mLocationEditText.getText().toString();
+                        String age = mageEditText.getText().toString();
+                        String preference = mpreferenceEditText.getText().toString();
+                        String email = memailEditText.getText().toString();
+                        String password = mpasswordEditText.getText().toString();
 
-                    String username = meditText.getText().toString();
-                    String location = mLocationEditText.getText().toString();
-                    String age = mageEditText.getText().toString();
-                    String preference = mpreferenceEditText.getText().toString();
-                    String email = memailEditText.getText().toString();
-                    String password = mpasswordEditText.getText().toString();
+                        Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                        intent.putExtra("username", username);
+                        intent.putExtra("location", location);
+                        intent.putExtra("age", age);
+                        intent.putExtra("preference", preference);
+                        intent.putExtra("email", email);
+                        intent.putExtra("password", password);
 
-                    Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-                    intent.putExtra("username", username);
-                    intent.putExtra("location", location);
-                    intent.putExtra("age", age);
-                    intent.putExtra("preference", preference);
-                    intent.putExtra("email", email);
-                    intent.putExtra("password", password);
+                        startActivity(intent);
 
-                    startActivity(intent);
 //                  if(v.getId()==R.id.signupbutton)
 //                   getSupportFragmentManager().beginTransaction().add(R.id.container, new signInFragment()).commit();
 //                   mfindSignupButton.setVisibility(View.GONE);
@@ -76,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
 //                   mpreferenceEditText.setVisibility(View.GONE);
 //                   mpasswordEditText.setVisibility(View.GONE);
 //                   mLocationEditText.setVisibility(View.GONE);
+//                   msignup.setVisibility(View.GONE);
 
 
 
@@ -85,7 +93,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
-
+//        mproceedButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//
+//            }
+//        });
         }
 
 

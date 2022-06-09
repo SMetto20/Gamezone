@@ -63,6 +63,7 @@
          android:layout_centerHorizontal="true"
          android:layout_marginTop="40dp"
          android:background="@color/black"
+         android:layout_marginLeft="180dp"
          android:text="proceed" />
 
  </LinearLayout>

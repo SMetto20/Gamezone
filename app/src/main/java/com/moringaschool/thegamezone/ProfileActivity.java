@@ -3,6 +3,7 @@ package com.moringaschool.thegamezone;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +20,8 @@ public class ProfileActivity extends AppCompatActivity {
     @BindView(R.id.realprefTextView) TextView mrealprefTextView;
     @BindView(R.id.viewbutton)
     Button mviewButton;
-
+   @BindView(R.id.webbutton)
+   Button mwebButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +38,11 @@ public class ProfileActivity extends AppCompatActivity {
         mrealprefTextView.setText(pref);
         mviewButton.setOnClickListener(new View.OnClickListener() { public void onClick(View v) {
             Intent intent = new Intent(ProfileActivity.this, GamesActivity.class);
+            startActivity(intent);
+        }
+        });
+        mwebButton.setOnClickListener(new View.OnClickListener() { public void onClick(View v) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.freetogame.com"));
             startActivity(intent);
         }
         });
