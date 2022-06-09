@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "303924023293",
+    "project_id": "gamezone-194b4",
+    "storage_bucket": "gamezone-194b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303924023293:android:01e93ca84de4bace249394",
+        "android_client_info": {
+          "package_name": "com.moringaschool.thegamezone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "303924023293-9lp1vv5j5eliv80da2q984jfd862cmr4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moringaschool.thegamezone",
+            "certificate_hash": "85d6eb0d67a603e589244bcb640b25ebf8d39035"
+          }
+        },
+        {
+          "client_id": "303924023293-5blvmg7pb1i9tnhuclcafl351cu8hhe6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgn-LU_9VirXazFU2rr0rhxsmVV7CwBGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "303924023293-5blvmg7pb1i9tnhuclcafl351cu8hhe6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
