@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
 //    @BindView(R.id.proceedbutton)
 //    Button  mproceedButton;
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference ref = database.getReference();
+    FirebaseDatabase database;
+    DatabaseReference ref ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,8 +89,9 @@ public class MainActivity extends AppCompatActivity {
 //                   mpasswordEditText.setVisibility(View.GONE);
 //                   mLocationEditText.setVisibility(View.GONE);
 //                   msignup.setVisibility(View.GONE);
-
-
+                   database= FirebaseDatabase.getInstance();
+                   ref = database.getReference("Users");
+                  ref.setValue("hi");
 
                 }
 
