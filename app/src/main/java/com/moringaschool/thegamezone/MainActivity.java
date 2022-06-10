@@ -91,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
 //                   msignup.setVisibility(View.GONE);
                    database= FirebaseDatabase.getInstance();
                    ref = database.getReference("Users");
-                  ref.setValue("hi");
+                   User user = new User(username,location,preference,email,password,age);
+                  ref.child(username).setValue(user);
 
                 }
 

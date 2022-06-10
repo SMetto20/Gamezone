@@ -1,10 +1,9 @@
 package com.moringaschool.thegamezone;
 
 public class User {
-    String name, location , preference,email, password;
-    int age;
+    String name, location , preference,email, password, age;
 
-    public User(String name, String location, String preference, String email, String password, int age) {
+    public User(String name, String location, String preference, String email, String password, String age) {
         this.name = name;
         this.location = location;
         this.preference = preference;
@@ -53,11 +52,11 @@ public class User {
         this.password = password;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 }
