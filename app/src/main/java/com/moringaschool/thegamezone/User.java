@@ -1,12 +1,12 @@
 package com.moringaschool.thegamezone;
 
 public class User {
-    String name, location , preference,email, password, age;
+    String name, location , phone,email, password, age;
 
-    public User(String name, String location, String preference, String email, String password, String age) {
+    public User(String name, String location, String phone, String email, String password, String age) {
         this.name = name;
         this.location = location;
-        this.preference = preference;
+        this.phone = phone;
         this.email = email;
         this.password = password;
         this.age = age;
@@ -29,11 +29,11 @@ public class User {
     }
 
     public String getPreference() {
-        return preference;
+        return phone;
     }
 
     public void setPreference(String preference) {
-        this.preference = preference;
+        this.phone = preference;
     }
 
     public String getEmail() {

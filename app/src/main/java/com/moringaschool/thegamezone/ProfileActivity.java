@@ -34,8 +34,8 @@ public class ProfileActivity extends AppCompatActivity {
         mrealageTextView.setText(age);
         String loc = intent.getStringExtra("location");
         mreallocTextView.setText(loc);
-        String pref = intent.getStringExtra("preference");
-        mrealprefTextView.setText(pref);
+//        String pref = intent.getStringExtra("preference");
+//        mrealprefTextView.setText(pref);
         mviewButton.setOnClickListener(new View.OnClickListener() { public void onClick(View v) {
             Intent intent = new Intent(ProfileActivity.this, GamesActivity.class);
             startActivity(intent);
