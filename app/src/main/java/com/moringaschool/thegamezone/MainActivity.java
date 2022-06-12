@@ -1,10 +1,13 @@
 package com.moringaschool.thegamezone;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -25,6 +28,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
+
     @BindView(R.id.signupbutton)
     Button mfindSignupButton;
     @BindView(R.id.username)
@@ -42,17 +46,20 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.signup)
     TextView msignup;
-
-    @BindView(R.id.email2)
-            TextView mEmail2;
-    @BindView(R.id.password2)
-            TextView mPassword2;
-
+//    @BindView(R.id.password2)
+//            TextView mPassword2;
+//    @BindView(R.id.email2)
+//            TextView mEmail2;
 //    @BindView(R.id.proceedbutton)
-//    Button  mproceedButton;
+//            TextView mproceedbutton;
+
+private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+
     FirebaseDatabase database;
     DatabaseReference ref ;
     FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,32 +88,32 @@ public class MainActivity extends AppCompatActivity {
                         String email = memailEditText.getText().toString();
                         String password = mpasswordEditText.getText().toString();
 
-//                        Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-//                        intent.putExtra("username", username);
-//                        intent.putExtra("location", location);
-//                        intent.putExtra("age", age);
-//                        intent.putExtra("phone", phonenumber);
-//                        intent.putExtra("email", email);
-//                        intent.putExtra("password", password);
-//
-//                        startActivity(intent);
+                        Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                        intent.putExtra("username", username);
+                        intent.putExtra("location", location);
+                        intent.putExtra("age", age);
+                        intent.putExtra("phone", phonenumber);
+                        intent.putExtra("email", email);
+                        intent.putExtra("password", password);
+
+                        startActivity(intent);
 
                         createUser();
 
-                  if(v.getId()==R.id.signupbutton)
-                   getSupportFragmentManager().beginTransaction().add(R.id.container, new signInFragment()).commit();
-                   mfindSignupButton.setVisibility(View.GONE);
-                   meditText.setVisibility(View.GONE);
-                   mageEditText.setVisibility(View.GONE);
-                   memailEditText.setVisibility(View.GONE);
-                   mphoneEditText.setVisibility(View.GONE);
-                   mpasswordEditText.setVisibility(View.GONE);
-                   mLocationEditText.setVisibility(View.GONE);
-                   msignup.setVisibility(View.GONE);
-                   database= FirebaseDatabase.getInstance();
-                   ref = database.getReference("Users");
-                   User user = new User(username,location,phonenumber,email,password,age);
-                  ref.child(username).setValue(user);
+//                  if(v.getId()==R.id.signupbutton)
+//                   getSupportFragmentManager().beginTransaction().add(R.id.container, new signInFragment()).commit();
+//                   mfindSignupButton.setVisibility(View.GONE);
+//                   meditText.setVisibility(View.GONE);
+//                   mageEditText.setVisibility(View.GONE);
+//                   memailEditText.setVisibility(View.GONE);
+//                   mphoneEditText.setVisibility(View.GONE);
+//                   mpasswordEditText.setVisibility(View.GONE);
+//                   mLocationEditText.setVisibility(View.GONE);
+//                   msignup.setVisibility(View.GONE);
+//                   database= FirebaseDatabase.getInstance();
+//                   ref = database.getReference("Users");
+//                   User user = new User(username,location,phonenumber,email,password,age);
+//                  ref.child(username).setValue(user);
 
                 }
 
@@ -114,12 +121,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
-//        mproceedButton.setOnClickListener(new View.OnClickListener() {
-//            loginUser();
+
+//        mproceedbutton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                loginUser();
 //
-//        }
-//    });
-//
+//            }
+//        });
         }
 
 
@@ -224,31 +233,45 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    private void loginUser(){
-        String email = memailEditText.getText().toString();
-        String password = mpasswordEditText.getText().toString();
-        String password2 = mPassword2.getText().toString();
-        String email2 = mEmail2.getText().toString();
-        if (email2.isEmpty()) {
-            mEmail2.setError("field cannot be empty");
-            mEmail2.requestFocus();
-        }  else if(password2.isEmpty()) {
-                mpasswordEditText.setError("field cannot be empty");
-                mPassword2.requestFocus();
-        }else{
-            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()) {
-                        Toast.makeText(MainActivity.this, "Login is succesful", Toast.LENGTH_SHORT).show();
-                    }else{
-                        Toast.makeText(MainActivity.this, "Login Error:" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                    }
-                }
-            });
-        }
+//    private void loginUser(){
+//        String email = memailEditText.getText().toString();
+//        String password = mpasswordEditText.getText().toString();
+//        String password2 = mPassword2.getText().toString();
+//        String email2 = mEmail2.getText().toString();
+//        String username = meditText.getText().toString();
+//        String location = mLocationEditText.getText().toString();
+//        String age = mageEditText.getText().toString();
+//        String phonenumber = mphoneEditText.getText().toString();
+//        if (email2.isEmpty()) {
+//            mEmail2.setError("field cannot be empty");
+//            mEmail2.requestFocus();
+//        }  else if(password2.isEmpty()) {
+//            mPassword2.setError("field cannot be empty");
+//            mPassword2.requestFocus();
+//        }else{
+//            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                @Override
+//                public void onComplete(@NonNull Task<AuthResult> task) {
+//                    if(task.isSuccessful()) {
+//                        Toast.makeText(MainActivity.this, "Login is succesful", Toast.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+//                        intent.putExtra("username", username);
+//                        intent.putExtra("location", location);
+//                        intent.putExtra("age", age);
+//                        intent.putExtra("phone", phonenumber);
+//                        intent.putExtra("email", email);
+//                        intent.putExtra("password", password);
+//
+//                        startActivity(intent);
+//                    }else{
+//                        Toast.makeText(MainActivity.this, "Login Error:" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+//                    }
+//                }
+//            });
+//        }
+//
+//    }
 
-    }
 
 
 }
