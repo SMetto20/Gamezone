@@ -9,6 +9,8 @@ import androidx.fragment.app.FragmentManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 //            TextView mEmail2;
 //    @BindView(R.id.proceedbutton)
 //            TextView mproceedbutton;
+    private String mnewlocation;
 
 private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
@@ -66,6 +69,8 @@ private SharedPreferences mSharedPreferences;
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
 
 
         mfindSignupButton.setOnClickListener(new View.OnClickListener() {
@@ -88,17 +93,28 @@ private SharedPreferences mSharedPreferences;
                         String email = memailEditText.getText().toString();
                         String password = mpasswordEditText.getText().toString();
 
-                        Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-                        intent.putExtra("username", username);
-                        intent.putExtra("location", location);
-                        intent.putExtra("age", age);
-                        intent.putExtra("phone", phonenumber);
-                        intent.putExtra("email", email);
-                        intent.putExtra("password", password);
 
-                        startActivity(intent);
+                            addToSharedPreferences(location);
+//                            Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+//                            intent.putExtra("username", username);
+//                            intent.putExtra("location", location);
+//                            intent.putExtra("age", age);
+//                            intent.putExtra("phone", phonenumber);
+//                            intent.putExtra("email", email);
+//                            intent.putExtra("password", password);
+//
+//                            startActivity(intent);
 
-                        createUser();
+
+                    database= FirebaseDatabase.getInstance();
+                    ref = database.getReference("Users");
+                    User user = new User(username,phonenumber,email,password,age);
+                    ref.child(username).setValue(user);
+
+                    createUser();
+
+                    mnewlocation = mSharedPreferences.getString(Constants.LOCATION,null);
+                    Log.d("Shared Pref Location", mnewlocation);
 
 //                  if(v.getId()==R.id.signupbutton)
 //                   getSupportFragmentManager().beginTransaction().add(R.id.container, new signInFragment()).commit();
@@ -110,10 +126,10 @@ private SharedPreferences mSharedPreferences;
 //                   mpasswordEditText.setVisibility(View.GONE);
 //                   mLocationEditText.setVisibility(View.GONE);
 //                   msignup.setVisibility(View.GONE);
-//                   database= FirebaseDatabase.getInstance();
-//                   ref = database.getReference("Users");
-//                   User user = new User(username,location,phonenumber,email,password,age);
-//                  ref.child(username).setValue(user);
+//                    database= FirebaseDatabase.getInstance();
+//                    ref = database.getReference("Users");
+//                    User user = new User(username,location,phonenumber,email,password,age);
+//                    ref.child(username).setValue(user);
 
                 }
 
@@ -272,7 +288,9 @@ private SharedPreferences mSharedPreferences;
 //
 //    }
 
-
+    private void addToSharedPreferences(String location) {
+        mEditor.putString(Constants.LOCATION, location).apply();
+    }
 
 }
 
