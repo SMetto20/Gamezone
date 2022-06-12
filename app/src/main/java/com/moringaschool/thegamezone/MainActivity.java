@@ -43,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.signup)
     TextView msignup;
 
+    @BindView(R.id.email2)
+            TextView mEmail2;
+    @BindView(R.id.password2)
+            TextView mPassword2;
+
 //    @BindView(R.id.proceedbutton)
 //    Button  mproceedButton;
     FirebaseDatabase database;
@@ -110,11 +115,13 @@ public class MainActivity extends AppCompatActivity {
 
         });
 //        mproceedButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
+//            loginUser();
 //
-//            }
-//        });
+//        }
+//    });
+//
         }
+
 
 
     private boolean validateEmail() {
@@ -215,6 +222,31 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+    }
+    private void loginUser(){
+        String email = memailEditText.getText().toString();
+        String password = mpasswordEditText.getText().toString();
+        String password2 = mPassword2.getText().toString();
+        String email2 = mEmail2.getText().toString();
+        if (email2.isEmpty()) {
+            mEmail2.setError("field cannot be empty");
+            mEmail2.requestFocus();
+        }  else if(password2.isEmpty()) {
+                mpasswordEditText.setError("field cannot be empty");
+                mPassword2.requestFocus();
+        }else{
+            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful()) {
+                        Toast.makeText(MainActivity.this, "Login is succesful", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(MainActivity.this, "Login Error:" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+        }
 
     }
 
