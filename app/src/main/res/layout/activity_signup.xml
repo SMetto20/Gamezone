@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="100dp"
         android:textSize="35sp"
         android:textColor="@color/white"
         android:text="Sign up"/>
@@ -31,7 +31,8 @@
         android:inputType="text"
         android:textColorHint="@color/white"
         android:hint="username"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"/>
     <EditText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
