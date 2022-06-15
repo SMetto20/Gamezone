@@ -35,7 +35,7 @@
             android:text="Game Name"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textColor="@color/teal_200"/>
 
         <TextView
             android:id="@+id/descriptionTextView"
