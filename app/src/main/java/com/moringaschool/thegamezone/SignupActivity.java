@@ -85,8 +85,7 @@ public class SignupActivity extends AppCompatActivity {
 
                     addToSharedPreferences(location);
 
-                    Intent intent = new Intent(SignupActivity.this, SignInActivity.class);
-                    startActivity(intent);
+
 
 //                            Intent intent = new Intent(SignupActivity.this, ProfileActivity.class);
 //                            intent.putExtra("username", username);
@@ -101,7 +100,7 @@ public class SignupActivity extends AppCompatActivity {
 
 
 
-//                    createUser();
+                    createUser();
 //
 
                     mnewlocation = mSharedPreferences.getString(Constants.LOCATION,null);
@@ -199,6 +198,8 @@ public class SignupActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(SignupActivity.this, "user registration succesful", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SignupActivity.this, SignInActivity.class);
+                    startActivity(intent);
 
                 }else{
                     Toast.makeText(SignupActivity.this, "Registration Error:" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
