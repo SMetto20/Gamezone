@@ -1,10 +1,13 @@
 package com.moringaschool.thegamezone;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,10 +41,6 @@ public class SignInActivity extends AppCompatActivity {
 
     @BindView(R.id.proceedbutton)
     Button mproceedbutton;
-    @BindView(R.id.firebaseProgressBar)
-    ProgressBar mSignInProgressBar;
-    @BindView(R.id.loadingTextView)
-    TextView mLoadingSignUp;
 
 
     FirebaseAuth mAuth;
@@ -80,17 +79,6 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
     }
-//    private void showProgressBar() {
-//        mSignInProgressBar.setVisibility(View.VISIBLE);
-//        mLoadingSignUp.setVisibility(View.VISIBLE);
-//        mAuthProgressDialog.setMessage("Authenticating with Firebase...");
-//        mLoadingSignUp.setText("Log in you in");
-//    }
-//
-//    private void hideProgressBar() {
-//        mSignInProgressBar.setVisibility(View.GONE);
-//        mLoadingSignUp.setVisibility(View.GONE);
-//    }
 
     private void loginUser(){
 //        String email = memailEditText.getText().toString();
@@ -113,42 +101,17 @@ public class SignInActivity extends AppCompatActivity {
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            Toast.makeText(SignInActivity.this, "success", Toast.LENGTH_SHORT).show();
-//
+                            Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
                             if (!task.isSuccessful()) {
-//
-                                Toast.makeText(SignInActivity.this, "Authentication failed.",
+                                Log.w(TAG, "signInWithEmail", task.getException());
+                                Toast.makeText(SignInActivity.this, "Authentication passed.",
                                         Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(SignInActivity.this, ProfileActivity.class);
-                        startActivity(intent);
+                                startActivity(intent);
+                            }
                         }
-                    };
-//            Query checkEmail = FirebaseDatabase.getInstance().getReference("Users").orderByChild("username").equalTo(username2);
-//            checkEmail.addListenerForSingleValueEvent(new ValueEventListener() {
-//                @Override
-//                public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                    if(snapshot.exists());
-//                    String systemEmail = snapshot.child(username2).child("email").getValue(String.class);
-//                    String systemPass= snapshot.child(username2).child("password").getValue(String.class);
-//                    if (systemEmail.equals(email2) && systemPass.equals(password2)){
-//                        Intent intent = new Intent(SignInActivity.this, ProfileActivity.class);
-//                        startActivity(intent);
-//                    }
 //
-//                }
 //
-//                @Override
-//                public void onCancelled(@NonNull DatabaseError error) {
-//
-//                }
-//            });
-
-
-//            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                @Override
-//                public void onComplete(@NonNull Task<AuthResult> task) {
-//                    if(task.isSuccessful()) {
-////                        Toast.makeText(MainActivity.this, "Login is succesful", Toast.LENGTH_SHORT).show();
 ////                        Intent intent = new Intent(getActivity(), ProfileActivity.class);
 ////                        intent.putExtra("username", username);
 ////                        intent.putExtra("location", location);
@@ -157,27 +120,22 @@ public class SignInActivity extends AppCompatActivity {
 ////                        intent.putExtra("email", email);
 ////                        intent.putExtra("password", password);
 ////
-////                        startActivity(intent);
-//                    }else{
-////                        Toast.makeText(signInFragment.this, "Login Error:" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-//                    }
-//                }
-////            });
+////
         });
 
         }
     }
-    @Override
-    public void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
-        }
-    }
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        mAuth.addAuthStateListener(mAuthListener);
+//    }
+//
+//    @Override
+//    public void onStop() {
+//        super.onStop();
+//        if (mAuthListener != null) {
+//            mAuth.removeAuthStateListener(mAuthListener);
+//        }
+//    }
 }

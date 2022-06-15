@@ -43,12 +43,6 @@ public class SignupActivity extends AppCompatActivity {
 
     @BindView(R.id.signup)
     TextView msignup;
-//        @BindView(R.id.password2)
-//            TextView mPassword2;
-//    @BindView(R.id.email2)
-//            TextView mEmail2;
-//    @BindView(R.id.proceedbutton)
-//            TextView mproceedbutton;
     private String mnewlocation;
 
     private SharedPreferences mSharedPreferences;
@@ -90,21 +84,22 @@ public class SignupActivity extends AppCompatActivity {
 
 
                     addToSharedPreferences(location);
-                            Intent intent = new Intent(SignupActivity.this, ProfileActivity.class);
-                            intent.putExtra("username", username);
-                            intent.putExtra("location", location);
-                            intent.putExtra("age", age);
-                            intent.putExtra("phone", phonenumber);
-                            intent.putExtra("email", email);
-                            intent.putExtra("password", password);
 
-                            startActivity(intent);
+                    Intent intent = new Intent(SignupActivity.this, SignInActivity.class);
+                    startActivity(intent);
+
+//                            Intent intent = new Intent(SignupActivity.this, ProfileActivity.class);
+//                            intent.putExtra("username", username);
+//                            intent.putExtra("location", location);
+//                            intent.putExtra("age", age);
+//                            intent.putExtra("phone", phonenumber);
+//                            intent.putExtra("email", email);
+//                            intent.putExtra("password", password);
+//
+//                            startActivity(intent);
 
 
-//                    database= FirebaseDatabase.getInstance();
-//                    ref = database.getReference("Users");
-//                    User user = new User(username,phonenumber,email,password,age);
-//                    ref.child(username).setValue(user);
+
 
 //                    createUser();
 //
@@ -113,15 +108,6 @@ public class SignupActivity extends AppCompatActivity {
                     Log.d("Shared Pref Location", mnewlocation);
 
                   if(v.getId()==R.id.signupbutton)
-//                   getSupportFragmentManager().beginTransaction().add(R.id.container, new signInFragment()).commit();
-//                   mfindSignupButton.setVisibility(View.GONE);
-//                   meditText.setVisibility(View.GONE);
-//                   mageEditText.setVisibility(View.GONE);
-//                   memailEditText.setVisibility(View.GONE);
-//                   mphoneEditText.setVisibility(View.GONE);
-//                   mpasswordEditText.setVisibility(View.GONE);
-//                   mLocationEditText.setVisibility(View.GONE);
-//                   msignup.setVisibility(View.GONE);
 
                     database= FirebaseDatabase.getInstance();
                     ref = database.getReference("Users");
@@ -135,13 +121,6 @@ public class SignupActivity extends AppCompatActivity {
 
         });
 
-//        mproceedbutton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                loginUser();
-//
-//            }
-//        });
     }
 
 
@@ -210,17 +189,7 @@ public class SignupActivity extends AppCompatActivity {
     public void onStart(){
         super.onStart();
         FirebaseUser user = mAuth.getCurrentUser();
-//        if(user == null){    getSupportFragmentManager().beginTransaction().add(R.id.container, new signInFragment()).commit();
-//                   mfindSignupButton.setVisibility(View.GONE);
-//                   meditText.setVisibility(View.GONE);
-//                   mageEditText.setVisibility(View.GONE);
-//                   memailEditText.setVisibility(View.GONE);
-//                   mphoneEditText.setVisibility(View.GONE);
-//                   mpasswordEditText.setVisibility(View.GONE);
-//                   mLocationEditText.setVisibility(View.GONE);
-//                   msignup.setVisibility(View.GONE);
 //
-//        }
     }
     private void createUser(){
         String email = memailEditText.getText().toString();
@@ -230,18 +199,7 @@ public class SignupActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(SignupActivity.this, "user registration succesful", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(SignupActivity.this, SignInActivity.class);
-                    startActivity(intent);
 
-//                    getSupportFragmentManager().beginTransaction().add(R.id.container, new signInFragment()).commit();
-//                    mfindSignupButton.setVisibility(View.GONE);
-//                    meditText.setVisibility(View.GONE);
-//                    mageEditText.setVisibility(View.GONE);
-//                    memailEditText.setVisibility(View.GONE);
-//                    mphoneEditText.setVisibility(View.GONE);
-//                    mpasswordEditText.setVisibility(View.GONE);
-//                    mLocationEditText.setVisibility(View.GONE);
-//                    msignup.setVisibility(View.GONE);
                 }else{
                     Toast.makeText(SignupActivity.this, "Registration Error:" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                 }
