@@ -102,10 +102,12 @@ public class GamesActivity extends AppCompatActivity {
             }
 
             @Override
-            public boolean onQueryTextChange(String s) {
-
+            public boolean onQueryTextChange(String newText) {
+                filterList(newText);
                 return true;
             }
+
+
         });
         return true;
     }
@@ -113,5 +115,9 @@ public class GamesActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
+    }
+    private void filterList(String newText) {
+//        List<GamesListResponse> gamesListResponses = new List <GamesListResponse>;
+
     }
 }
