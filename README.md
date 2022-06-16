@@ -33,7 +33,7 @@ System.out.prntln("hello world")
 
 ### Dependancies
 1. project needs gradle to run 
-2. The project also needs android studio to run 
+2. The project also needs android studio to run
 
 ### About-author
 Linked in-[Sandra Metto](https://www.linkedin.com/in/sandra-metto-68500319a/)
