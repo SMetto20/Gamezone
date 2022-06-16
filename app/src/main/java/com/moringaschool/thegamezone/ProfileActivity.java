@@ -27,13 +27,13 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         ButterKnife.bind(this);
-        Intent intent = getIntent();
-        String username = intent.getStringExtra("username");
-        mrealnameTextView.setText(username);
-        String age = intent.getStringExtra("age");
-        mrealageTextView.setText(age);
-        String loc = intent.getStringExtra("location");
-        mreallocTextView.setText(loc);
+//        Intent intent = getIntent();
+//        String username = intent.getStringExtra("username");
+//        mrealnameTextView.setText(username);
+//        String age = intent.getStringExtra("age");
+//        mrealageTextView.setText(age);
+//        String loc = intent.getStringExtra("location");
+//        mreallocTextView.setText(loc);
 //        String pref = intent.getStringExtra("preference");
 //        mrealprefTextView.setText(pref);
         mviewButton.setOnClickListener(new View.OnClickListener() { public void onClick(View v) {
