@@ -48,5 +48,6 @@
         android:background="@color/purple_500"
         android:fontFamily="poppins"
         android:text="GET STARTED"
+
         android:textColor="@color/white" />
 </RelativeLayout>

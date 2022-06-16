@@ -108,7 +108,7 @@
         android:layout_centerHorizontal="true"
         android:background="@color/purple_500"
         android:text="proceed"
-
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:layout_marginTop="30dp"/>
 
