@@ -119,19 +119,19 @@
         android:id="@+id/realprefTextView"
         android:layout_below="@+id/location"
         android:gravity="right"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="220dp"
         android:textSize="16sp"
         android:textColor="@color/white"
         />
 
     <Button
         android:id="@+id/viewbutton"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/realprefTextView"
         android:layout_alignParentStart="true"
         android:layout_marginStart="101dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="38dp"
         android:background="@drawable/btn_bg"
         android:text="view games"
         android:textAllCaps="false"
@@ -139,15 +139,15 @@
 
     <Button
         android:id="@+id/webbutton"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/preference"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="89dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="69dp"
         android:background="@drawable/btn_bg"
-        android:textAllCaps="false"
         android:text="go to web page"
+        android:textAllCaps="false"
         android:textColor="@color/white" />
 
 
