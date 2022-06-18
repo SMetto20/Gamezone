@@ -35,12 +35,10 @@ import retrofit2.Response;
 public class GamesActivity extends AppCompatActivity {
 
 
-//    private String[] games = new String[]{"Space punks","Hello infinite","Genshin impact","PUBG","Dark night","cross out","rouge company","rocket league",
-//            "amor valor","shadow arena"};
+
     @BindView(R.id.recyclerView)
     RecyclerView mrecyclerView;
-//    @BindView(R.id.listview)
-//    ListView mListView;
+
 
 
     @Override
