@@ -80,6 +80,19 @@
             android:text="Log in"
             android:textColor="@color/white"
             android:textAllCaps="false" />
+        <Button
+            android:id="@+id/signupbutton"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/proceedbutton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="40dp"
+            android:background="@color/purple_700"
+            android:text="not a member? sign up"
+            android:textColor="@color/white"
+            android:textAllCaps="false" />
+
 
     </LinearLayout>
 
