@@ -43,7 +43,7 @@
         android:textSize="20sp"
         android:paddingBottom="10dp"
 
-        android:text="Name"
+        android:text="Name :"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -52,7 +52,7 @@
         android:id="@+id/realnameTextView"
         android:layout_below="@+id/profile"
         android:gravity="right"
-        android:layout_marginLeft="210dp"
+        android:layout_marginLeft="220dp"
         android:textSize="20sp"
         android:textColor="@color/white"
         />
@@ -66,7 +66,7 @@
         android:layout_marginLeft="170dp"
         android:paddingBottom="10dp"
         android:textSize="20sp"
-        android:text="age"
+        android:text="age :"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
         android:id="@+id/realageTextView"
         android:layout_below="@+id/name"
         android:gravity="right"
-        android:layout_marginLeft="210dp"
+        android:layout_marginLeft="220dp"
         android:textSize="20sp"
         android:textColor="@color/white"
         />
@@ -88,7 +88,7 @@
         android:layout_marginLeft="150dp"
         android:paddingBottom="15dp"
         android:textSize="20sp"
-        android:text="location"
+        android:text="location :"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -110,19 +110,19 @@
         android:layout_marginLeft="140dp"
         android:paddingBottom="15dp"
         android:textSize="20sp"
-        android:text="Phone"
+        android:text="Phone :"
         />
+
     <TextView
+        android:id="@+id/realprefTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="123456789 "
-        android:id="@+id/realprefTextView"
         android:layout_below="@+id/location"
-        android:gravity="right"
         android:layout_marginLeft="220dp"
-        android:textSize="16sp"
+        android:gravity="right"
+        android:text="123456789 "
         android:textColor="@color/white"
-        />
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/viewbutton"

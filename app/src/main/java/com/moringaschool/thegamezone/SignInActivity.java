@@ -42,6 +42,8 @@ public class SignInActivity extends AppCompatActivity {
 
     @BindView(R.id.proceedbutton)
     Button mproceedbutton;
+    @BindView(R.id.signupbutton)
+    Button msignupbutton;
 
 
     FirebaseAuth mAuth;
@@ -68,6 +70,13 @@ public class SignInActivity extends AppCompatActivity {
                 }
             }
         };
+        msignupbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignInActivity.this, SignupActivity.class);
+                startActivity(intent);
+            }
+        });
 
         mproceedbutton.setOnClickListener(new View.OnClickListener() {
             @Override

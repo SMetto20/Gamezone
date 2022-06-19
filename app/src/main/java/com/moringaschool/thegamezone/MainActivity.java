@@ -65,10 +65,10 @@ public class MainActivity extends AppCompatActivity {
                    @Override
                    public void run() {
                        Intent intent = new Intent(MainActivity.this, SignupActivity.class);
-                       Pair[] pairs = new Pair[1];
-                       pairs[0] = new Pair<View,String>(mimageView,"Kratos");
-                       ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
-                       startActivity(intent, options.toBundle());
+//                       Pair[] pairs = new Pair[1];
+//                       pairs[0] = new Pair<View,String>(mimageView,"Kratos");
+//                       ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
+                       startActivity(intent);
                        finish();
                    }
                }, SPLASH_SCREEN);
