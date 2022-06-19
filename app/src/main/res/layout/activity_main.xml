@@ -13,6 +13,7 @@
         android:layout_alignTop="@+id/startedbutton"
         android:layout_marginTop="82dp"
         android:scaleType="centerCrop"
+        android:transitionName="Kratos"
         app:srcCompat="@drawable/kratos" />
 
     <TextView
