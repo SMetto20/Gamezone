@@ -16,6 +16,8 @@ import android.util.Log;
 import android.util.Pair;
 import android.util.Patterns;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -39,13 +41,24 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.imageView3)
     ImageView mimageView;
+    Animation topAnimation, bottomAnimation;
+    TextView textView, textView2;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         ButterKnife.bind(this);
+        topAnimation = AnimationUtils.loadAnimation(this,R.anim.top_animation);
+        bottomAnimation = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
+         textView = findViewById(R.id.textView);
+        textView2 = findViewById(R.id.textView2);
+        mimageView.setAnimation(bottomAnimation);
+        textView.setAnimation(topAnimation);
+        textView2.setAnimation(topAnimation);
+
         mStartedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
