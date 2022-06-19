@@ -15,9 +15,9 @@
 <!--       />-->
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
         android:id="@+id/gameImageView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
 
         />
 
@@ -33,6 +33,7 @@
             android:layout_width="164dp"
             android:layout_height="wrap_content"
             android:text="Game Name"
+            android:layout_marginLeft="250dp"
             android:textColor="@color/teal_200"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -50,7 +51,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="80dp">
 
             <TextView
                 android:id="@+id/dateTextView"
@@ -58,10 +59,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
+                android:layout_marginBottom="20dp"
                 android:text="Release date"
                 android:textColor="@color/white"
-                android:textStyle="bold"
-                android:layout_marginBottom="20dp"/>
+                android:textStyle="bold" />
         </RelativeLayout>
     </LinearLayout>
 
