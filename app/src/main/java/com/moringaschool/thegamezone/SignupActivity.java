@@ -29,6 +29,8 @@ import butterknife.ButterKnife;
 public class SignupActivity extends AppCompatActivity {
     @BindView(R.id.signupbutton)
     Button mfindSignupButton;
+    @BindView(R.id.member)
+    Button memberButton;
     @BindView(R.id.username)
     EditText meditText;
     @BindView(R.id.location)
@@ -63,6 +65,14 @@ public class SignupActivity extends AppCompatActivity {
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mEditor = mSharedPreferences.edit();
 
+        memberButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignupActivity.this, SignInActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         mfindSignupButton.setOnClickListener(new View.OnClickListener() {
             @Override

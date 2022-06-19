@@ -112,6 +112,19 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:layout_marginTop="15dp"/>
+    <Button
+        android:id="@+id/member"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signupbutton"
+        android:layout_centerHorizontal="true"
+        android:background="@color/purple_700"
+
+        android:text="already a member? sign in"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:layout_marginTop="15dp"/>
+
 
     <FrameLayout
         android:id="@+id/container"

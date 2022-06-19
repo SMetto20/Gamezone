@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.util.Pair;
@@ -36,13 +37,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
-    @BindView(R.id.startedbutton)
-    Button mStartedButton;
+
 
     @BindView(R.id.imageView3)
     ImageView mimageView;
     Animation topAnimation, bottomAnimation;
     TextView textView, textView2;
+    private static int SPLASH_SCREEN = 3000;
 
 
     @Override
@@ -59,18 +60,24 @@ public class MainActivity extends AppCompatActivity {
         textView.setAnimation(topAnimation);
         textView2.setAnimation(topAnimation);
 
-        mStartedButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SignupActivity.class);
-                Pair[] pairs = new Pair[1];
-                pairs[0] = new Pair<View,String>(mimageView,"Kratos");
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
-                startActivity(intent, options.toBundle());
+
+               new Handler().postDelayed(new Runnable() {
+                   @Override
+                   public void run() {
+                       Intent intent = new Intent(MainActivity.this, SignupActivity.class);
+                       Pair[] pairs = new Pair[1];
+                       pairs[0] = new Pair<View,String>(mimageView,"Kratos");
+                       ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
+                       startActivity(intent, options.toBundle());
+                       finish();
+                   }
+               }, SPLASH_SCREEN);
+
+
+
 
             }
-            });
-        }
+
 
 
     }
