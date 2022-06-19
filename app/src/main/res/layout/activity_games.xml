@@ -14,16 +14,12 @@
         android:layout_marginRight="7dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/recyclerView"
+        android:id="@+id/floating"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="280dp"
-        android:layout_marginTop="316dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginBottom="175dp" />
+        android:layout_marginStart="281dp"
+        android:layout_marginTop="150dp"/>
     <!--     <ListView-->
 <!--         android:layout_width="match_parent"-->
 <!--         android:layout_height="wrap_content"-->

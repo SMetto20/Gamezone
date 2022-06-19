@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -13,11 +14,15 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,6 +43,8 @@ public class GamesActivity extends AppCompatActivity {
 
     @BindView(R.id.recyclerView)
     RecyclerView mrecyclerView;
+    @BindView(R.id.floating)
+    FloatingActionButton floating;
 
 
 
@@ -50,7 +57,13 @@ public class GamesActivity extends AppCompatActivity {
 
 //        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, games);
 //        mListView.setAdapter(adapter);
-
+        floating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                setRequestedOrientation(GamesActivity.SCREEN_ORIENTATION_LANSCAPE);
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+            }
+        });
 
 
         GameApi gameApi = GameClient.getClient();
