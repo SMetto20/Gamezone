@@ -3,7 +3,7 @@ By Sandra Metto
 ## Table of contents
 1. [Description](#Description)
 2. [Technology](#Technology)
-3. [Known Bugs](#Known bugs)
+3. [KnownBugs](#Known bugs)
 4. [Installation](#installation)
 5. [Dependancies](#Dependncies)
 6. [About-author](#About-athor)
