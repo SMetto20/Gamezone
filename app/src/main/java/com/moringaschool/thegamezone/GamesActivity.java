@@ -45,8 +45,8 @@ public class GamesActivity extends AppCompatActivity {
     RecyclerView mrecyclerView;
     @BindView(R.id.floating)
     FloatingActionButton floating;
-
-
+    List<GamesListResponse> gamesListResponse  = new ArrayList<>();
+    GamesAdapter gamesAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +54,7 @@ public class GamesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_games);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.purple_200)));
         ButterKnife.bind(this);
-
+        gamesAdapter = new GamesAdapter(this, gamesListResponse);
 //        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, games);
 //        mListView.setAdapter(adapter);
         floating.setOnClickListener(new View.OnClickListener() {
@@ -97,25 +97,25 @@ public class GamesActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu, menu);
-        ButterKnife.bind(this);
 
-//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        mEditor = mSharedPreferences.edit();
 
         MenuItem menuItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) menuItem.getActionView();
         searchView.setQueryHint("Search game");
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
             @Override
-            public boolean onQueryTextSubmit(String s) {
+            public boolean onQueryTextSubmit(String name) {
+
                 return false;
             }
 
             @Override
-            public boolean onQueryTextChange(String newText) {
-                filterList(newText);
-                return true;
+            public boolean onQueryTextChange(String name) {
+                gamesAdapter.getFilter().filter(name);
+//                filterList(name);
+                return false;
             }
 
 

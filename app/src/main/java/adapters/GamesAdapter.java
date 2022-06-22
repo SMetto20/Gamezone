@@ -1,10 +1,15 @@
 package adapters;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,20 +23,61 @@ import com.moringaschool.thegamezone.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 
-public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.MyViewholder> {
+public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.MyViewholder> implements Filterable {
 
     Context context;
     List<GamesListResponse> gamesList;
+
+
 
     public GamesAdapter(Context context, List<GamesListResponse> gamesList) {
         this.context = context;
         this.gamesList = gamesList;
 
+
     }
 
+   @Override
+   public Filter getFilter(){
 
+       return gamesFilter;
+   }
+   private Filter gamesFilter = new Filter() {
+
+       @Override
+       protected FilterResults performFiltering(CharSequence charSequence) {
+           Log.e("charactersequence", String.valueOf(gamesList.size()));
+           List<GamesListResponse> filterdList = new ArrayList<>();
+           if (charSequence == null || charSequence.length() == 0) {
+               filterdList.addAll(gamesList);
+
+           } else {
+               String filterPattern = charSequence.toString().toLowerCase();
+               for (GamesListResponse item : gamesList) {
+                   if (item.getTitle().toLowerCase().contains(filterPattern.toLowerCase())) {
+                       filterdList.add(item);
+
+                   }
+               }
+           }
+          FilterResults results = new FilterResults();
+           results.values = filterdList;
+           return results;
+       }
+
+
+       @Override
+       protected void publishResults(CharSequence charSequence, FilterResults results) {
+           gamesList.clear();
+           gamesList.addAll((Collection<? extends GamesListResponse>) results.values);
+           notifyDataSetChanged();
+
+       }
+   };
 
 
     @NonNull

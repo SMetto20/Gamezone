@@ -48,7 +48,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Adrian "
+        android:text="Cory "
         android:id="@+id/realnameTextView"
         android:layout_below="@+id/profile"
         android:gravity="right"
